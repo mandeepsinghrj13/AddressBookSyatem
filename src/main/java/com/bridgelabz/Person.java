@@ -1,5 +1,8 @@
 package com.bridgelabz;
 
+/**
+ * getter and setter using in this class
+ */
 public class Person {
     String firstName, lastName, address, city, state, email;
     long phoneNumber, zipCode;
@@ -80,4 +83,5 @@ public class Person {
     public void setZipCode(long zipCode) {
         this.zipCode = zipCode;
     }
+
 }
