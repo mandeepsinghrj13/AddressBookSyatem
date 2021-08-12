@@ -24,16 +24,16 @@ public class AddressBookSystem {
         AddressBookServiceInterface addressBookServiceInterface = new AddressBookService();
         boolean flag = true;
         while (flag) {
-            System.out.println("Press 1 to Create new Address book\nPress 2 to edit address books\nPress 3 to view all the address books names.\nPress 4 to Exit");
+            System.out.println("Press 1 to Create new Address book\nPress 2 to edit address books\nPress 3 to view all the address books names.\nPress 4 to view all the person.\nPress 5 to Exit");
             int op = scanner.nextInt();
             switch (op) {
                 case 1:
-                ArrayList<Person> personArrayList = new ArrayList<Person>();
-                System.out.println("Enter a company/address book name : ");
-                String companyName = scanner.next();
-                addressBookServiceInterface.addAddressBook(addressBook, companyName, personArrayList);
-                System.out.println("");
-                break;
+                    ArrayList<Person> personArrayList = new ArrayList<Person>();
+                    System.out.println("Enter a company/address book name : ");
+                    String companyName = scanner.next();
+                    addressBookServiceInterface.addAddressBook(addressBook, companyName, personArrayList);
+                    System.out.println("");
+                    break;
                 case 2:
                     ArrayList<Person> personArrayList1 = new ArrayList<Person>();
                     System.out.println("Enter a company/address book name : ");
@@ -42,6 +42,9 @@ public class AddressBookSystem {
                     break;
                 case 3:
                     addressBookServiceInterface.viewAddressBook(addressBook);
+                    break;
+                case 4:
+                    addressBookServiceInterface.searchPersonByCityOrState(addressBook);
                     break;
                 default:
                     flag = false;
