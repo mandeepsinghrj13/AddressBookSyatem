@@ -16,7 +16,6 @@ import java.util.Scanner;
  */
 public class AddressBookSystem {
     static Scanner scanner = new Scanner(System.in);
-
     /**
      * main class
      * @param args using hashmap in main function
@@ -25,10 +24,11 @@ public class AddressBookSystem {
         HashMap<String, ArrayList<Person>> addressBook = new HashMap<String, ArrayList<Person>>();
         AddressBookServiceInterface addressBookServiceInterface = new AddressBookService();
         PersonServiceInterface personServiceInterface = new PersonService();
+
         boolean flag = true;
         while (flag) {
             System.out.println("Press 1 to Create new Address book\nPress 2 to edit address books\nPress 3 to view all the address books names."+
-                    "\nPress 4 to view all the person in particular city or state.\nPress 5 to Exit");
+                    "\nPress 4 to view and count all the person in particular city or state.\nPress 5 to Exit");
             int op = scanner.nextInt();
             switch (op) {
                 case 1:
