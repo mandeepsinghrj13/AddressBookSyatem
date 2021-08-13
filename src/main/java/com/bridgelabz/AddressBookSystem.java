@@ -28,7 +28,7 @@ public class AddressBookSystem {
         boolean flag = true;
         while (flag) {
             System.out.println("Press 1 to Create new Address book\nPress 2 to edit address books\nPress 3 to view all the address books names."+
-                    "\nPress 4 to view and count all the person in particular city or state.\nPress 5 to Exit");
+                    "\nPress 4 to view and count all the person in particular city or state.\nPress 5 to sort the person by name\nPress 6 to Exit");
             int op = scanner.nextInt();
             switch (op) {
                 case 1:
@@ -49,6 +49,9 @@ public class AddressBookSystem {
                     break;
                 case 4:
                     addressBookServiceInterface.searchPersonByCityOrState(addressBook);
+                    break;
+                case 5:
+                    addressBookServiceInterface.sortByPersonName(addressBook);
                     break;
                 default:
                     flag = false;

@@ -1,6 +1,7 @@
 package com.brigdelabz.service;
 import com.bridgelabz.Person;
 import java.util.*;
+import java.util.stream.Collectors;
 
 /**
  * Add, read and view operation on address book
@@ -162,6 +163,19 @@ public class AddressBookService implements AddressBookServiceInterface {
             System.out.println("Number of Person in " + stateName.toUpperCase() + " : " + personCountInState);
             System.out.println();
         }
+    }
+    /**
+     * Printing all the sorted Person entries in address book alphabetically by Person's first name
+     * @param addressBooks
+     */
+    @Override
+    public void sortByPersonName(HashMap<String, ArrayList<Person>> addressBooks) {
+        addressBooks.keySet().forEach(entry -> {
+            List<Person> person = addressBooks.get(entry)
+                    .stream().sorted(Comparator.comparing(Person::getFirstName))
+                    .collect(Collectors.toList());
+            System.out.println(person);
+        });
     }
 }
 
